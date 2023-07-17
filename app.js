@@ -6,6 +6,7 @@ const db = require("./models");
 require('dotenv').config()
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
+let filmRouter = require('./routes/film');
 
 db.sequelize.sync()
     .then(() => {
@@ -26,6 +27,6 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(express.json());
 app.use('/', indexRouter);
-app.use('/api/v1/scrap', usersRouter)
+app.use('/api/v1/scrap', filmRouter)
 
 module.exports = app;
