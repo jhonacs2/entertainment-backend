@@ -27,6 +27,6 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(express.json());
 app.use('/', indexRouter);
-app.use('/api/v1/scrap', filmRouter)
+app.use('/api/v1/film', filmRouter)
 
 module.exports = app;
